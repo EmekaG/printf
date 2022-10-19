@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <unistd.h> /* used to define symbolic constants */
 
-#define (UNUSED)(x) (void)(x)
+#define UNUSED(x) (void)(x)
 #define BUFF_SIZE 1024 /* macro used as symbolic name for numeric constants */
 
 /* Flag modifiers */
@@ -37,8 +37,8 @@ struct fmt
  */
 typedef struct fmt fmt_t;
 
-int _printf(conct char *format, ...);
-int to_print(const char *fmt, int i, va_list lists, char buffer[]. int flags, int width, int precision, int size);
+int _printf(const char *format, ...);
+int to_print(const char *fmt, int *i, va_list lists, char buffer[], int flags, int width, int precision, int size);
 
 /* functions */
 int print_char(va_list types, char buffer[], int flags, int width, int precision, int size);
