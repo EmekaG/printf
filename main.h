@@ -70,6 +70,9 @@ int for_size(const char *format, int *i);
 /* function to print reverse string */
 int print_rev(va_list types, char buffer[], int flags, int width, int precision, int size);
 
+/*function to print a string in rot13 */
+int print_rot13string(va_list types, char buffer[], int flags, int width, int precision, int size);
+
 /* width handler */
 int to_write_char(char c, char buffer[], int flags, int width, int precision, int size);
 int write_num(int is_plus, int index, char buffer[], int flags, int width, int precision, int size);
@@ -79,7 +82,7 @@ int write_ptr(char buffer[], int index, int len, int width, int flags, char p, c
 int write_un(int is_minus, int index, char buffer[], int flags, int width, int precision, int size);
 
 /* utils */
-int is_canprint(char);
+int can_print(char);
 int add_hexa_code(char, char[], int);
 int is_digit(char);
 

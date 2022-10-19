@@ -31,16 +31,18 @@ int _printf(const char *format, ...)
 			prints_chars++;
 		}
 		else
+		{
 			print_buffer(buffer, &buff_index);
-		flags = for_flags(format, &i);
-		width = for_width(format, &i, lists);
-		precision = for_precision(format, &i, lists);
-		size = for_size(format, &i);
-		++i;
-		prints = to_print(format, &i, lists, buffer, flags, width, precision, size);
-		if (prints == -1)
-			return (-1);
-		prints_chars += prints;
+			flags = for_flags(format, &i);
+			width = for_width(format, &i, lists);
+			precision = for_precision(format, &i, lists);
+			size = for_size(format, &i);
+			++i;
+			prints = to_print(format, &i, lists, buffer, flags, width, precision, size);
+			if (prints == -1)
+				return (-1);
+			prints_chars += prints;
+		}
 	}
 
 	print_buffer(buffer, &buff_index);
